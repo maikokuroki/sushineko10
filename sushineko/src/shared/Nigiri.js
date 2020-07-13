@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React,{Component} from 'react';
 import { Card, CardImg, CardText, CardBody } from 'reactstrap';
 
@@ -45,7 +46,52 @@ const NIGIRI = [
         price:5
     },
 ]
+=======
+export const NIGIRIMENU = [
+	{
+		id: 0,
+		name: "MAGURO",
+		image: "/assets/images/maguro.jpeg",
+		featured: false,
+		description: "Tuna",
+		price: 5,
+	},
+	{
+		id: 1,
+		name: "TORO SALMON",
+		image: "/assets/images/torosalmon.jpg",
+		featured: false,
+		description: "Fatty salmon sushi",
+		price: 5,
+	},
+	{
+		id: 2,
+		name: "TAMAGO",
+		image: "/assets/images/tamago.jpeg",
+		featured: false,
+		description: "Cooked egg sushi.",
+		price: 3,
+	},
+	{
+		id: 3,
+		name: "IKURA",
+		image: "/assets/images/ikura.jpeg",
+		featured: false,
+		description: "Salmon roe.",
+		price: 8,
+	},
+	{
+		id: 4,
+		name: "AJI",
+		image: "/assets/images/aji.jpg",
+		featured: false,
+		description: "Spanish mackarel",
+		price: 5,
+	},
+];
+>>>>>>> 9c7f87f7e781c1ea7c3fe2805bcc0b0d84af0591
 
+/* AMY INSTRUCTOR: don't mix data and components together in a file. I moved this into the MenuComponent.
 class NigiriMenu extends Component{
     constructor(props) {
         super(props);
@@ -86,3 +132,4 @@ class NigiriMenu extends Component{
 }
 
 export default NigiriMenu;
+*/
