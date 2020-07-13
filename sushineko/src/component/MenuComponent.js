@@ -1,25 +1,75 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import { Card, CardImg, CardText, CardBody } from "reactstrap";
 
-import NigiriMenu from '../shared/Nigiri';
-//import Rolls from '../shared/Rolls';
-//import Side from '../shared/Sidemenu';
-//import Specials from '../shared/Specials';
+import { NIGIRIMENU } from "../shared/Nigiri";
+import { ROLLSMENU } from "../shared/Rolls";
+import { SIDEMENU } from "../shared/Sidemenu";
+import { SPECIALSMENU } from "../shared/Specials";
 
+function Nigiri({ nigiriMenu }) {
+	return (
+		<div>
+			{nigiriMenu.map((nigiri) => {
+				return (
+					<Card>
+						<CardImg top src={nigiri.image} alt={nigiri.name} />
+						<CardBody>
+							<CardText>
+								{nigiri.description} <br />
+								Price:${nigiri.price}
+							</CardText>
+						</CardBody>
+					</Card>
+				);
+			})}
+		</div>
+	);
+}
 
+function Rolls({ rollsMenu }) {
+	return (
+		<div>
+			{rollsMenu.map((roll) => {
+				return (
+					<Card>
+						<CardImg top src={roll.image} alt={roll.name} />
+						<CardBody>
+							<CardText>
+								{roll.description} <br />
+								Price:${roll.price}
+							</CardText>
+						</CardBody>
+					</Card>
+				);
+			})}
+		</div>
+	);
+}
 
+// CREATE FUNCTION COMPONENT FOR SIDEMENU
 
-function Menu(props){
+// CREATE FUNCTION COMPONENT FOR SPECIAL MENU
 
-   
-   
+class Menu extends Component {
+	constructor(props) {
+		super(props);
 
-    
-        return(
-            <div>
-              <NigiriMenu />
-            </div>
-        );
-    
+		this.state = {
+			nigiriMenu: NIGIRIMENU,
+			rollsMenu: ROLLSMENU,
+			sideMenu: SIDEMENU,
+			specialsMenu: SPECIALSMENU,
+		};
+	}
+
+	render() {
+		return (
+			<React.Fragment>
+				<Nigiri nigiriMenu={this.state.nigiriMenu} />
+				<Rolls rollsMenu={this.state.rollsMenu} />
+			</React.Fragment>
+		);
+	}
 }
 
 export default Menu;
