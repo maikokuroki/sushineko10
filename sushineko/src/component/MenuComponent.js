@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-
-import Nigiri from '../shared/Nigiri';
 import NigiriMenu from '../shared/Nigiri';
 //import Rolls from '../shared/Rolls';
 //import Side from '../shared/Sidemenu';
