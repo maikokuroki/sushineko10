@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import { Card, CardImg, CardText, CardBody } from 'reactstrap';
-import { render } from '@testing-library/react';
+
 
 
 const NIGIRI = [
