@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, CardImg, CardText, CardBody } from "reactstrap";
+import { Card, CardImg, CardText, CardBody, CardHeader, Row, Col, Container } from "reactstrap";
 
 import { NIGIRIMENU } from "../shared/Nigiri";
 import { ROLLSMENU } from "../shared/Rolls";
@@ -11,8 +11,11 @@ function Nigiri({ nigiriMenu }) {
 		<div>
 			{nigiriMenu.map((nigiri) => {
 				return (
-                <div className="col-3">
+                <Container>
+				<Row>
+					<Col sm="3" mx="auto">
 					<Card>
+						<CardHeader>{nigiri.name}</CardHeader>
 						<CardImg top src={nigiri.image} alt={nigiri.name} width="50"/>
 						<CardBody>
 							<CardText>
@@ -21,7 +24,9 @@ function Nigiri({ nigiriMenu }) {
 							</CardText>
 						</CardBody>
 					</Card>
-                </div>
+					</Col>
+                </Row>
+				</Container>
 				);
 			})}
 		</div>
@@ -33,8 +38,12 @@ function Rolls({ rollsMenu }) {
 		<div>
 			{rollsMenu.map((roll) => {
 				return (
+				<Container>
+					<Row>
+					<Col sm="3" mx="3">
 					<Card>
-						<CardImg top src={roll.image} alt={roll.name} />
+						<CardHeader>{roll.name}</CardHeader>
+						<CardImg top src={roll.image} alt={roll.name} width="50" />
 						<CardBody>
 							<CardText>
 								{roll.description} <br />
@@ -42,6 +51,9 @@ function Rolls({ rollsMenu }) {
 							</CardText>
 						</CardBody>
 					</Card>
+					</Col>
+					</Row>
+				</Container>
 				);
 			})}
 		</div>

@@ -22,7 +22,7 @@ class Main extends Component{
             
                 </Switch>
                 <h1>welcome</h1>
-                  <image src={"./src/aseets/images/aji.jpg"} />
+                  <image src={"/aseets/images/aji.jpg"} />
                 <Footer />
             
             </React.Fragment>

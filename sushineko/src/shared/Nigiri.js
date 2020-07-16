@@ -2,7 +2,7 @@ export const NIGIRIMENU = [
 	{
 		id: 0,
 		name: "MAGURO",
-		image: "./src/assets/images/maguro.jpeg",
+		image: "/assets/images/maguro.jpeg",
 		featured: false,
 		description: "Tuna",
 		price: 5,
