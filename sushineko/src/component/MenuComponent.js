@@ -11,8 +11,9 @@ function Nigiri({ nigiriMenu }) {
 		<div>
 			{nigiriMenu.map((nigiri) => {
 				return (
+                <div className="col-3">
 					<Card>
-						<CardImg top src={nigiri.image} alt={nigiri.name} />
+						<CardImg top src={nigiri.image} alt={nigiri.name} width="50"/>
 						<CardBody>
 							<CardText>
 								{nigiri.description} <br />
@@ -20,6 +21,7 @@ function Nigiri({ nigiriMenu }) {
 							</CardText>
 						</CardBody>
 					</Card>
+                </div>
 				);
 			})}
 		</div>

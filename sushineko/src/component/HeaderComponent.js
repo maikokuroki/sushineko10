@@ -14,6 +14,9 @@ const Header = (props) =>{
                 <div className="container">
                     
                    <Nav navbar>
+                   <NavItem>
+                        <NavLink className="nav-link" to="/home">Home</NavLink>
+                        </NavItem>
                         <NavItem>
                             <NavLink className="nav-link" to="/menu">Menu</NavLink>
                         </NavItem>
