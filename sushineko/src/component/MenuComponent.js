@@ -1,5 +1,16 @@
 import React, { Component } from "react";
-import { Card, CardImg, CardText, CardBody, CardHeader, Row, Col, Container, CardImgOverlay, CardTitle, Button } from "reactstrap";
+import {
+	CardDeck,
+	Card,
+	CardImg,
+	CardText,
+	CardBody,
+	CardHeader,
+	Container,
+	CardImgOverlay,
+	CardTitle,
+	Button,
+} from "reactstrap";
 
 import { NIGIRIMENU } from "../shared/Nigiri";
 import { ROLLSMENU } from "../shared/Rolls";
@@ -8,47 +19,39 @@ import { SPECIALSMENU } from "../shared/Specials";
 
 function Nigiri({ nigiriMenu }) {
 	return (
-		<div>
+		<CardDeck>
 			{nigiriMenu.map((nigiri) => {
 				return (
-                <Container>
-				<Row>
-					<Col sm="3" mx="auto">
 					<Card>
 						<CardImgOverlay>
-						<CardTitle className="CardTitle fluid">{nigiri.name}</CardTitle>
+							<CardTitle className='CardTitle fluid'>{nigiri.name}</CardTitle>
 						</CardImgOverlay>
-						<CardImg top src={nigiri.image} alt={nigiri.name} width="50"/>
+						<CardImg top src={nigiri.image} alt={nigiri.name} width='50' />
 						<CardBody>
 							<CardText>
 								{nigiri.description} <br />
-								Price:${nigiri.price}<br />
-								<Button type="submit">Order</Button>
+								Price:${nigiri.price}
+								<br />
+								<Button type='submit'>Order</Button>
 							</CardText>
 						</CardBody>
 					</Card>
-					</Col>
-                </Row>
-				</Container>
 				);
 			})}
-		</div>
+		</CardDeck>
 	);
 }
 
 function Rolls({ rollsMenu }) {
 	return (
-		<div>
+		<CardDeck>
 			{rollsMenu.map((roll) => {
 				return (
-				<Container>
-					<Row>
-					<Col sm="3" mx="3">
 					<Card>
-					<CardImgOverlay>
-					<CardTitle className="CardTitle fluid">{roll.name}</CardTitle>
-					</CardImgOverlay>
-						<CardImg top src={roll.image} alt={roll.name} width="50" />
+						<CardImgOverlay>
+							<CardTitle className='CardTitle fluid'>{roll.name}</CardTitle>
+						</CardImgOverlay>
+						<CardImg top src={roll.image} alt={roll.name} width='50' />
 						<CardBody>
 							<CardText>
 								{roll.description} <br />
@@ -56,76 +59,61 @@ function Rolls({ rollsMenu }) {
 							</CardText>
 						</CardBody>
 					</Card>
-					</Col>
-					</Row>
-				</Container>
 				);
 			})}
-		</div>
+		</CardDeck>
 	);
 }
 
 function Specials({ specialsMenu }) {
 	return (
-		<div>
+		<CardDeck>
 			{specialsMenu.map((specials) => {
 				return (
-                <Container>
-				<Row>
-					<Col sm="3" mx="auto">
 					<Card>
 						<CardImgOverlay>
-						<CardTitle className="CardTitle fluid">{specials.name}</CardTitle>
+							<CardTitle className='CardTitle fluid'>{specials.name}</CardTitle>
 						</CardImgOverlay>
-						<CardImg top src={specials.image} alt={specials.name} width="50"/>
+						<CardImg top src={specials.image} alt={specials.name} width='50' />
 						<CardBody>
 							<CardText>
 								{specials.description} <br />
-								Price:${specials.price}<br />
-								<Button type="submit">Order</Button>
+								Price:${specials.price}
+								<br />
+								<Button type='submit'>Order</Button>
 							</CardText>
 						</CardBody>
 					</Card>
-					</Col>
-                </Row>
-				</Container>
 				);
 			})}
-		</div>
+		</CardDeck>
 	);
 }
 
 function Sidemenu({ sideMenu }) {
 	return (
-		<div>
+		<CardDeck>
 			{sideMenu.map((sidemenu) => {
 				return (
-                <Container>
-				<Row>
-					<Col sm="3" mx="auto">
 					<Card>
 						<CardImgOverlay>
-						<CardTitle className="CardTitle fluid">{sidemenu.name}</CardTitle>
+							<CardTitle className='CardTitle fluid'>{sidemenu.name}</CardTitle>
 						</CardImgOverlay>
-						<CardImg top src={sidemenu.image} alt={sidemenu.name} width="50"/>
+						<CardImg top src={sidemenu.image} alt={sidemenu.name} width='50' />
 						<CardBody>
 							<CardText>
 								{sidemenu.description} <br />
-								Price:${sidemenu.price}<br />
-								<Button type="submit">Order</Button>
+								Price:${sidemenu.price}
+								<br />
+								<Button type='submit'>Order</Button>
 							</CardText>
 						</CardBody>
 					</Card>
-					</Col>
-                </Row>
-				</Container>
 				);
 			})}
-		</div>
+		</CardDeck>
 	);
 }
-
-
 
 class Menu extends Component {
 	constructor(props) {
@@ -142,10 +130,12 @@ class Menu extends Component {
 	render() {
 		return (
 			<React.Fragment>
-				<Nigiri nigiriMenu={this.state.nigiriMenu} />
-				<Rolls rollsMenu={this.state.rollsMenu} />
-				<Specials specialsMenu={this.state.specialsMenu} />
-				<Sidemenu sideMenu={this.state.sideMenu} />
+				<Container>
+					<Nigiri nigiriMenu={this.state.nigiriMenu} />
+					<Rolls rollsMenu={this.state.rollsMenu} />
+					<Specials specialsMenu={this.state.specialsMenu} />
+					<Sidemenu sideMenu={this.state.sideMenu} />
+				</Container>
 			</React.Fragment>
 		);
 	}
