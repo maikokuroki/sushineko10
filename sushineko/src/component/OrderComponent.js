@@ -80,7 +80,8 @@ class Order extends Component{
                 <Form onSubmit={this.handleSubmit} className="col-3 item-align-center">
                     <FormGroup>
                         <Label htmlFor="name">Name</Label>
-                        <Input type="text" id="name" 
+                        <Input type="text" id="name"
+                        name="name" 
                         placeholder="Your Name" 
                         value={this.state.name} 
                         invalid={errors.name}
@@ -92,6 +93,7 @@ class Order extends Component{
                     <FormGroup>
                         <Label htmlFor="phoneNum">Phone Number</Label>
                         <Input type="text" id="phoneNum" 
+                        name="phoneNum" 
                         placeholder="Phone Number" 
                         value={this.state.phoneNum}
                         invalid={errors.phoneNum}
@@ -102,7 +104,10 @@ class Order extends Component{
                     
                     <FormGroup>
                         <Label htmlFor="address">Address</Label>
-                        <Input type="text" id="address" placeholder="For delivery only" value={this.state.address} />
+                        <Input type="text" id="address" 
+                        name="address"
+                        placeholder="For delivery only" 
+                        value={this.state.address} />
                     </FormGroup>
 
                     <FormGroup>
