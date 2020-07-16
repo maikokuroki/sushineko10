@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, CardImg, CardText, CardBody, CardHeader, Row, Col, Container } from "reactstrap";
+import { Card, CardImg, CardText, CardBody, CardHeader, Row, Col, Container, CardImgOverlay, CardTitle, Button } from "reactstrap";
 
 import { NIGIRIMENU } from "../shared/Nigiri";
 import { ROLLSMENU } from "../shared/Rolls";
@@ -15,12 +15,15 @@ function Nigiri({ nigiriMenu }) {
 				<Row>
 					<Col sm="3" mx="auto">
 					<Card>
-						<CardHeader>{nigiri.name}</CardHeader>
+						<CardImgOverlay>
+						<CardTitle className="CardTitle fluid">{nigiri.name}</CardTitle>
+						</CardImgOverlay>
 						<CardImg top src={nigiri.image} alt={nigiri.name} width="50"/>
 						<CardBody>
 							<CardText>
 								{nigiri.description} <br />
-								Price:${nigiri.price}
+								Price:${nigiri.price}<br />
+								<Button type="submit">Order</Button>
 							</CardText>
 						</CardBody>
 					</Card>
@@ -42,7 +45,9 @@ function Rolls({ rollsMenu }) {
 					<Row>
 					<Col sm="3" mx="3">
 					<Card>
-						<CardHeader>{roll.name}</CardHeader>
+					<CardImgOverlay>
+					<CardTitle className="CardTitle fluid">{roll.name}</CardTitle>
+					</CardImgOverlay>
 						<CardImg top src={roll.image} alt={roll.name} width="50" />
 						<CardBody>
 							<CardText>
@@ -60,9 +65,67 @@ function Rolls({ rollsMenu }) {
 	);
 }
 
-// CREATE FUNCTION COMPONENT FOR SIDEMENU
+function Specials({ specialsMenu }) {
+	return (
+		<div>
+			{specialsMenu.map((specials) => {
+				return (
+                <Container>
+				<Row>
+					<Col sm="3" mx="auto">
+					<Card>
+						<CardImgOverlay>
+						<CardTitle className="CardTitle fluid">{specials.name}</CardTitle>
+						</CardImgOverlay>
+						<CardImg top src={specials.image} alt={specials.name} width="50"/>
+						<CardBody>
+							<CardText>
+								{specials.description} <br />
+								Price:${specials.price}<br />
+								<Button type="submit">Order</Button>
+							</CardText>
+						</CardBody>
+					</Card>
+					</Col>
+                </Row>
+				</Container>
+				);
+			})}
+		</div>
+	);
+}
 
-// CREATE FUNCTION COMPONENT FOR SPECIAL MENU
+function Sidemenu({ sideMenu }) {
+	return (
+		<div>
+			{sideMenu.map((sidemenu) => {
+				return (
+                <Container>
+				<Row>
+					<Col sm="3" mx="auto">
+					<Card>
+						<CardImgOverlay>
+						<CardTitle className="CardTitle fluid">{sidemenu.name}</CardTitle>
+						</CardImgOverlay>
+						<CardImg top src={sidemenu.image} alt={sidemenu.name} width="50"/>
+						<CardBody>
+							<CardText>
+								{sidemenu.description} <br />
+								Price:${sidemenu.price}<br />
+								<Button type="submit">Order</Button>
+							</CardText>
+						</CardBody>
+					</Card>
+					</Col>
+                </Row>
+				</Container>
+				);
+			})}
+		</div>
+	);
+}
+
+
 
 class Menu extends Component {
 	constructor(props) {
@@ -81,6 +144,8 @@ class Menu extends Component {
 			<React.Fragment>
 				<Nigiri nigiriMenu={this.state.nigiriMenu} />
 				<Rolls rollsMenu={this.state.rollsMenu} />
+				<Specials specialsMenu={this.state.specialsMenu} />
+				<Sidemenu sideMenu={this.state.sideMenu} />
 			</React.Fragment>
 		);
 	}
