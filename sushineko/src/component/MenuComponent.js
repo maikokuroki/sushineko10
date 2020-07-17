@@ -23,10 +23,8 @@ function Nigiri({ nigiriMenu }) {
 			{nigiriMenu.map((nigiri) => {
 				return (
 					<Card>
-						<CardImgOverlay>
-							<CardTitle className='CardTitle fluid'>{nigiri.name}</CardTitle>
-						</CardImgOverlay>
-						<CardImg top src={nigiri.image} alt={nigiri.name} width='50' />
+						<CardImg top src={nigiri.image} alt={nigiri.name} width='50' height='150' />
+						<CardTitle className='CardTitle fluid'>{nigiri.name}</CardTitle>
 						<CardBody>
 							<CardText>
 								{nigiri.description} <br />
@@ -48,10 +46,8 @@ function Rolls({ rollsMenu }) {
 			{rollsMenu.map((roll) => {
 				return (
 					<Card>
-						<CardImgOverlay>
-							<CardTitle className='CardTitle fluid'>{roll.name}</CardTitle>
-						</CardImgOverlay>
-						<CardImg top src={roll.image} alt={roll.name} width='50' />
+						<CardImg top src={roll.image} alt={roll.name} width='50' height='150' />
+						<CardTitle className='CardTitle fluid'>{roll.name}</CardTitle>
 						<CardBody>
 							<CardText>
 								{roll.description} <br />
@@ -71,10 +67,8 @@ function Specials({ specialsMenu }) {
 			{specialsMenu.map((specials) => {
 				return (
 					<Card>
-						<CardImgOverlay>
-							<CardTitle className='CardTitle fluid'>{specials.name}</CardTitle>
-						</CardImgOverlay>
-						<CardImg top src={specials.image} alt={specials.name} width='50' />
+						<CardImg top src={specials.image} alt={specials.name} width='50' height='300' />
+						<CardTitle className='CardTitle fluid'>{specials.name}</CardTitle>
 						<CardBody>
 							<CardText>
 								{specials.description} <br />
@@ -96,10 +90,8 @@ function Sidemenu({ sideMenu }) {
 			{sideMenu.map((sidemenu) => {
 				return (
 					<Card>
-						<CardImgOverlay>
-							<CardTitle className='CardTitle fluid'>{sidemenu.name}</CardTitle>
-						</CardImgOverlay>
-						<CardImg top src={sidemenu.image} alt={sidemenu.name} width='50' />
+						<CardImg top src={sidemenu.image} alt={sidemenu.name} width='50' height='150' />
+						<CardTitle className='CardTitle'>{sidemenu.name}</CardTitle>
 						<CardBody>
 							<CardText>
 								{sidemenu.description} <br />

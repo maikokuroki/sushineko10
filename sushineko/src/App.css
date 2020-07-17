@@ -6,9 +6,11 @@ h1 {
 }
 
 .jumbotron{
+  background-image: url("/assets/images/bamboo.jpg");
   background-color: seagreen;
   color: white;
   align-self: center;
+  margin-bottom: 0;
   
 }
 
@@ -16,6 +18,7 @@ Footer{
   background-color: seagreen;
   color: white;
   align-self: center;
+  background-image: url("/assets/images/bamboo.jpg");
   
 }
 
@@ -24,4 +27,17 @@ Footer{
   opacity: 0.7;
   color: white;
 
+}
+
+body {
+  background-image: url("/assets/images/green.jpg");
+  background-color:rgba(255,255,255,0.8);
+  background-blend-mode:lighten;
+  background-attachment: fixed;
+}
+
+.navbar {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  margin-top: 0;
 }

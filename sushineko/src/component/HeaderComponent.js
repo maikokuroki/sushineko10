@@ -10,7 +10,7 @@ const Header = (props) =>{
             <Jumbotron fluid>
                 <h1 className="text-lg-center">NEKO SUSHI</h1>
             </Jumbotron>
-            <Navbar sticky="top" expand="md">
+            <Navbar dark className="navbar" sticky="top" expand="md">
                 <div className="container">
                     
                    <Nav navbar>

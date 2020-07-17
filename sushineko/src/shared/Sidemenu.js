@@ -2,7 +2,7 @@ export const SIDEMENU = [
 	{
 		id: 0,
 		name: "Assorted Tempura",
-		image: "/assets/images/maguro.jpeg",
+		image: "/assets/images/tempura.jpg",
 		featured: false,
 		description: "Tempura shrimp, shiso, mushroom and eggplant",
 		price: 10,

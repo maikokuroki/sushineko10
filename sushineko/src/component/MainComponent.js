@@ -6,6 +6,7 @@ import Footer from './FooterComponent';
 import Menu from './MenuComponent';
 import Order from './OrderComponent';
 import About from './AboutComponent';
+import Sidebar from './SidebarComponent';
 
 
 
@@ -14,6 +15,7 @@ class Main extends Component{
         return(
             <React.Fragment>
                 <Header />
+               
                 <Switch>
                   
                   <Route path="/menu" component={Menu} />
@@ -21,8 +23,9 @@ class Main extends Component{
                   <Route path="/about" component={About} />
             
                 </Switch>
+                
                 <h1>welcome</h1>
-                  <image src={"/aseets/images/aji.jpg"} />
+                  <image src={"./aseets/images/welcome.png"} />
                 <Footer />
             
             </React.Fragment>
