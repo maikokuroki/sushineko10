@@ -12,7 +12,7 @@ const Header = (props) =>{
             </Jumbotron>
             <Navbar dark className="navbar" sticky="top" expand="md">
                 <div className="container">
-                    
+                <img src={`${process.env.PUBLIC_URL}/assets/images/nekoface.png`} width="100"/>
                    <Nav navbar>
                    <NavItem>
                         <NavLink className="nav-link" to="/home">Home</NavLink>

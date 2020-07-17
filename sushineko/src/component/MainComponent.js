@@ -6,7 +6,7 @@ import Footer from './FooterComponent';
 import Menu from './MenuComponent';
 import Order from './OrderComponent';
 import About from './AboutComponent';
-import Sidebar from './SidebarComponent';
+
 
 
 
@@ -24,8 +24,11 @@ class Main extends Component{
             
                 </Switch>
                 
-                <h1>welcome</h1>
-                  <image src={"./aseets/images/welcome.png"} />
+                
+                  <img src={`${process.env.PUBLIC_URL}/assets/images/welcome.png`} width="300"/>
+                  <img src={`${process.env.PUBLIC_URL}/assets/images/neko.png`} width="500"/>
+
+                 
                 <Footer />
             
             </React.Fragment>
