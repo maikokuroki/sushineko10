@@ -25,8 +25,8 @@ class Main extends Component{
                 </Switch>
                 
                 
-                  <img src={`${process.env.PUBLIC_URL}/assets/images/welcome.png`} width="300"/>
-                  <img src={`${process.env.PUBLIC_URL}/assets/images/neko.png`} width="500"/>
+                <img src={`${process.env.PUBLIC_URL}/assets/images/welcome.png`} width="300"/>
+                <img src={`${process.env.PUBLIC_URL}/assets/images/neko.png`} width="500"/>
 
                  
                 <Footer />
