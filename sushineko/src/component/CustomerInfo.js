@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import { FormGroup, Form, Label, Input, Button, FormFeedback } from 'reactstrap';
+import { FormGroup, Form, Label, Input, Button, FormFeedback, Modal, ModalHeader, ModalBody } from 'reactstrap';
 import Menu from './MenuComponent';
 
 class CustomerInfo extends Component{
@@ -8,7 +8,7 @@ class CustomerInfo extends Component{
         super(props);
 
         this.state = {
-            menu: {Menu},
+            menu: { Menu },
             name: '',
             phoneNum: '',
             pickupMethod: 'Pick Up',
@@ -24,7 +24,9 @@ class CustomerInfo extends Component{
         };
         
         this.handleInputChange = this.handleInputChange.bind(this);
-        
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.toggleModal = this.toggleModal.bind(this);
+
     }
 
     handleInputChange(event) {
@@ -35,6 +37,18 @@ class CustomerInfo extends Component{
         this.setState({
           [name]: value
         });
+    }
+
+    toggleModal() {
+        this.setState({
+            isModalOpen: !this.state.isModalOpen
+        });
+    }
+
+
+    handleSubmit(event) {
+        
+
     }
 
    
@@ -76,7 +90,7 @@ class CustomerInfo extends Component{
                 <div className="container" id="orderform">
                     <div className="row">
                         <div className="col">
-                            <h2>Order here</h2>
+                            <h2>Your Info</h2>
                         </div>
                     </div>
                     <div className="row">
@@ -117,29 +131,44 @@ class CustomerInfo extends Component{
                                 <FormGroup>
                                     <legend>Pick up or Delivery</legend>
                                     <div className="btn-group btn-group-toggle" data-toggle="buttons">
-                                    <Label className="btn btn-success" check htmlFor="pickupMethod">
+                                    <Label className="btn btn-success"  htmlFor="pickupMethod">
                                     <Input type="radio" id="pickupMethod" name="pickupMethod" value={this.state.pickupMethod} />Pick up
                                     </Label>
-                                    <Label className="btn btn-primary" check htmlFor="pickupMethod">
+                                    <Label className="btn btn-primary" htmlFor="pickupMethod">
                                     <Input type="radio" id="pickupMethod" name="pickupMethod" value={this.state.pickupMethod} />Delivery
                                     </Label>
                                     </div>
                                 </FormGroup>
 
                                 <FormGroup>
-                                    <a className="btn btn-primary" href={this.state.menu} onClick={this.state.menu} >Next</a>
-                                    
+                                    <Button type="submit">Order</Button>                                    
                                 </FormGroup>
                             </div>
                           
                             
                         </Form>
+                        <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
+                <ModalHeader toggle={this.toggleModal}>Your Order
+                    <ModalBody>
+                        <h2>Please verify your Info.</h2>
+                        <p>
+                            Name: {this.state.name}<br/>
+                            Phone #: {this.state.phoneNum}<br />
+                            Pick-up or Delivery: {this.state.pickupMethod} <br />
+                            Address: {this.state.address}
+                        </p>
+                        <Button type="submit">Order</Button>
+                    </ModalBody>
+                </ModalHeader>
+            </Modal>
                     </div>
                 </div>
             </div>
         );
     }
 }
+
+
 
 
 
