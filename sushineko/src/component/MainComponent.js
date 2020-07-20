@@ -5,7 +5,7 @@ import Header from './HeaderComponent';
 import Footer from './FooterComponent';
 import Menu from './MenuComponent';
 import About from './AboutComponent';
-
+import Home from './HomeComponent';
 
 
 
@@ -16,7 +16,7 @@ class Main extends Component{
                 <Header />
                
                 <Switch>
-                  
+                  <Route path='/home' component={Home} />
                   <Route path="/menu" component={Menu} />
                   
                   <Route path="/about" component={About} />
@@ -24,9 +24,7 @@ class Main extends Component{
                 </Switch>
                 
                 
-                <img src={`${process.env.PUBLIC_URL}/assets/images/welcome.png`} width="300"/>
-                <img src={`${process.env.PUBLIC_URL}/assets/images/neko.png`} width="500"/>
-
+                
                  
                 <Footer />
             

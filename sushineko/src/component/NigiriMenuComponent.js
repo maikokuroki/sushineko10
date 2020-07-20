@@ -19,7 +19,7 @@ class Nigiri extends Component {
 
 		this.state = {
 			nigiriMenu: NIGIRIMENU,
-			//quantity: 0,
+			quantity: 0,
 
 			order: [],
 		};

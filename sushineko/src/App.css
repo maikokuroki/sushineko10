@@ -50,3 +50,8 @@ body {
 #orderform {
   margin: green;
 }
+
+.CarouselCaption {
+  background-color: green;
+  color: black;
+}
